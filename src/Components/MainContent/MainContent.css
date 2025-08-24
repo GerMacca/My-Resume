@@ -1,0 +1,19 @@
+main{
+  padding: clamp(24px, 5vw, 80px);
+  column-width: 520px;      
+  column-gap: 40px;
+}
+
+
+.box{
+  display: inline-block;      
+  width: 100%;
+  margin: 0 0 28px;
+  break-inside: avoid;       
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+}
+
+@media (max-width: 799px){ main{ column-count: 1; } }
+@media (800px <= width < 1200px){ main{ column-count: 2; } }
+@media (min-width: 1200px){ main{ column-count: 3; } }

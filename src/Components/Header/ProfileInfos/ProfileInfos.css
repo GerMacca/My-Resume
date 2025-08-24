@@ -1,0 +1,35 @@
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-med);
+  color: var(--color-contrast);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-size: var(--p-size);
+}
+
+.ctt-item {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-small);
+  cursor: pointer;
+  text-align: left;
+  max-width: 525px;
+}
+
+.icon:hover{
+    filter: drop-shadow(0 0 4px rgb(255, 255, 255));
+    cursor: pointer;
+}
+
+.contacts > * {
+  animation: fadeInLeft var(--med) var(--ease) forwards;
+  opacity: 0; /* inicia invisível */
+}
+
+.contacts > *:nth-child(1) { animation-delay: 0.2s; }
+.contacts > *:nth-child(2) { animation-delay: 0.3s; }
+.contacts > *:nth-child(3) { animation-delay: 0.4s; }
+.contacts > *:nth-child(4) { animation-delay: 0.5s; }

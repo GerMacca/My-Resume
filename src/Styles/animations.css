@@ -1,0 +1,295 @@
+/* ===== Biblioteca de Animações CSS ===== */
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Fade in suave */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Fade in com subida */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade in com descida */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade in com vinda pela esquerda */
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Fade in com vinda pela direita */
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Pulsar */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Bounce (pulo) */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-15px); }
+  60% { transform: translateY(-7px); }
+}
+
+/* Rotação infinita */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Brilho indo e voltando */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Sacudir (erro) */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+/* Zoom in */
+@keyframes zoomIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Zoom out */
+@keyframes zoomOut {
+  from { transform: scale(1.05); opacity: 1; }
+  to { transform: scale(1); opacity: 0; }
+}
+
+/* Fade infinito piscando */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Subir e descer lentamente (floating) */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Girar 3D */
+@keyframes flip {
+  from { transform: rotateY(0); }
+  to { transform: rotateY(360deg); }
+}
+
+/* Girar 3D */
+@keyframes flip-half {
+  from { transform: rotateY(0); }
+  to { transform: rotateY(180deg); }
+}
+
+/* Girar e crescer */
+@keyframes spinGrow {
+  0% { transform: rotate(0deg) scale(0.8); opacity: 0; }
+  100% { transform: rotate(360deg) scale(1); opacity: 1; }
+}
+
+/* Deslizar com bounce no final */
+@keyframes slideBounce {
+  0% { transform: translateX(-100%); }
+  80% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
+
+/* Efeito de escrever texto */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Cursor piscando */
+@keyframes blinkCursor {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: currentColor; }
+}
+
+/* Crescer vindo do canto */
+@keyframes growFromCorner {
+  0% { transform: scale(0) translate(-50%, -50%); opacity: 0; }
+  100% { transform: scale(1) translate(0, 0); opacity: 1; }
+}
+
+/* Desintegrar (fade + blur) */
+@keyframes dissolve {
+  0% { opacity: 1; filter: blur(0); }
+  100% { opacity: 0; filter: blur(8px); }
+}
+
+/* Surge (pop forte) */
+@keyframes pop {
+  0% { transform: scale(0.7); opacity: 0; }
+  70% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* Rotacionar em 3D para entrar */
+@keyframes rotateIn {
+  0% { transform: rotateX(-90deg); opacity: 0; }
+  100% { transform: rotateX(0); opacity: 1; }
+}
+
+/* Balão subindo */
+@keyframes rise {
+  0% { transform: translateY(100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Caindo */
+@keyframes drop {
+  0% { transform: translateY(-100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Pulsar com cor */
+@keyframes pulseColor {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(128, 0, 32, 0.6); }
+  50% { box-shadow: 0 0 0 12px rgba(128, 0, 32, 0); }
+}
+
+/* Vibração rápida */
+@keyframes vibrate {
+  0% { transform: translate(0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(-1px, -1px); }
+  60% { transform: translate(1px, 1px); }
+  80% { transform: translate(1px, -1px); }
+  100% { transform: translate(0); }
+}
+
+/* Luz passando */
+@keyframes lightSweep {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(300px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(300px) rotate(-360deg);
+  }
+}
+
+@keyframes lightPulse {
+  0%, 100% { box-shadow: 0 0 20px #a536ff; }
+  50%      { box-shadow: 0 0 40px #5d12a3; }
+}
+
+/* =========================================================
+   UTILITÁRIAS DE ANIMAÇÃO 
+   Exemplo de Uso: <div class="animate-fadeInUp"></div>
+   Dica: combine com .anim-fast | .anim-slow | .anim-infinite | .anim-delay-300
+========================================================= */
+
+/* Helpers globais */
+.anim-fast   { animation-duration: var(--fast) !important; }
+.anim-med    { animation-duration: var(--med) !important; }
+.anim-slow   { animation-duration: var(--slow) !important; }
+.anim-linear { animation-timing-function: linear !important; }
+.anim-ease   { animation-timing-function: var(--ease) !important; }
+.anim-infinite { animation-iteration-count: infinite !important; }
+.anim-fill   { animation-fill-mode: both !important; }
+
+/* delays comuns */
+.anim-delay-150 { animation-delay: 150ms !important; }
+.anim-delay-300 { animation-delay: 300ms !important; }
+.anim-delay-600 { animation-delay: 600ms !important; }
+
+/* ====== spin/rotate ====== */
+.animate-spin     { animation: spin var(--med) linear infinite; }
+.animate-rotate   { animation: rotate var(--med) linear infinite; }
+
+/* ====== fades ====== */
+.animate-fadeIn        { animation: fadeIn var(--med) var(--ease) both; }
+.animate-fadeInUp      { animation: fadeInUp var(--med) var(--ease) both; }
+.animate-fadeInDown    { animation: fadeInDown var(--med) var(--ease) both; }
+.animate-fadeInLeft    { animation: fadeInLeft var(--med) var(--ease) both; }
+.animate-fadeInRight   { animation: fadeInRight var(--med) var(--ease) both; }
+
+/* ====== scale/zoom/pop ====== */
+.animate-zoomIn   { animation: zoomIn var(--med) var(--ease) both; }
+.animate-zoomOut  { animation: zoomOut var(--med) var(--ease) both; }
+.animate-pop      { animation: pop .4s var(--ease) both; }
+.animate-spinGrow { animation: spinGrow .6s var(--ease) both; }
+
+/* ====== movimento (slide/bounce/float) ====== */
+.animate-bounce     { animation: bounce 1s var(--ease) both; }
+.animate-slideBounce{ animation: slideBounce .8s var(--ease) both; }
+.animate-float      { animation: float 3s var(--ease) infinite; }
+.animate-rise       { animation: rise var(--med) var(--ease) both; }
+.animate-drop       { animation: drop var(--med) var(--ease) both; }
+
+/* ====== atenção/feedback ====== */
+.animate-pulse      { animation: pulse 1s var(--ease) infinite; }
+.animate-shake      { animation: shake .5s var(--ease) both; }
+.animate-vibrate    { animation: vibrate .3s linear infinite; }
+.animate-pulseColor { animation: pulseColor 1.2s var(--ease) infinite; }
+
+/* ====== 3D / flips / rotateIn ====== */
+.animate-flip       { animation: flip .7s var(--ease) both; }
+.animate-flipHalf   { animation: flip-half .5s var(--ease) both; }
+.animate-rotateIn   { animation: rotateIn .6s var(--ease) both; }
+
+/* ====== efeitos visuais ====== */
+.animate-blink      { animation: blink 1s linear infinite; }
+.animate-dissolve   { animation: dissolve .5s var(--ease) both; }
+
+/* ====== typing/cursor ====== */
+/* Use em um container com overflow hidden e width controlada */
+.animate-typing {
+  animation: typing 2.5s steps(30, end) 1 both;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/* Cursor: aplique em um pseudo-elemento ou borda direita do texto */
+.animate-blinkCursor {
+  border-right: 2px solid currentColor;
+  animation: blinkCursor 1s step-end infinite;
+}
+
+/* ====== efeitos de brilho/sweep/shimmer ====== */
+.animate-shimmer {
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,.25), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s linear infinite;
+}
+.animate-lightSweep {
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,.3), transparent);
+  background-size: 200% 100%;
+  animation: lightSweep 1s linear infinite;
+}
+
+/* ====== grow from corner ====== */
+.animate-growFromCorner { animation: growFromCorner .5s var(--ease) both; }
+
+.animate-orbit { animation: orbit var(--dur) linear infinite; }

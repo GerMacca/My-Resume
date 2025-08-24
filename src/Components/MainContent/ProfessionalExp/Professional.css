@@ -1,0 +1,88 @@
+.professional{
+  --text: var(--fg-text, #1b1b1f);
+  --muted: var(--fg-muted, #5c5c70);
+  --accent1: var(--color-primary);
+  --accent2: var(--color-primary-light);
+  --border: color-mix(in srgb, var(--color-primary), transparent 80%);
+  --ok: #2e7d32;
+  --warn: #e53935;
+  --info: #1e88e5;
+  --rad: 14px;
+  --gap: 16px;
+}
+
+.professional-wrap{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: clamp(12px, 3vw, 24px);
+  color: var(--text);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--rad);
+  box-shadow: 0 8px 18px rgba(0,0,0,.08);
+  animation: fadeInLeft 1s ease-in-out both;
+}
+
+.professional-title{
+  margin: 0 0 12px 0;
+  font-weight: 700;
+  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+  color: var(--accent1);
+  position: relative;
+}
+.professional-title::after{
+  content:""; display:block; height:2px; width:76px; margin-top:8px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent1));
+}
+
+.prof-list{
+  list-style:none; margin:0; padding:0;
+  display:grid; gap: var(--gap);
+}
+
+.prof-item{
+  padding: 14px 16px 12px;
+  border-bottom: 2px solid color-mix(in srgb, var(--accent1), transparent 75%);
+}
+.prof-item:last-child{ border-bottom: none; }
+
+.prof-item{
+  opacity:0;
+  animation: fadeInLeft 1s ease-in-out both;
+}
+.prof-item:nth-child(1){ animation-delay: .00s; }
+.prof-item:nth-child(2){ animation-delay: .10s; }
+.prof-item:nth-child(3){ animation-delay: .20s; }
+.prof-item:nth-child(4){ animation-delay: .30s; }
+
+.prof-head{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:10px; flex-wrap:wrap;
+}
+.prof-head h3{
+  margin:0; font-size: clamp(1rem, 2.2vw, 1.2rem);
+  color:#000;
+}
+
+.badge{
+  font-weight:600; white-space:nowrap;
+  font-size: clamp(.85rem, 1.8vw, .95rem);
+}
+.badge.ok{ color: var(--ok); }
+.badge.warn{ color: var(--warn); }
+.badge.info{ color: var(--info); }
+
+.prof-sub{
+  margin:4px 0 0; color: var(--muted);
+  font-size: clamp(.9rem, 1.8vw, 1rem);
+}
+
+.prof-bullets{
+  margin:8px 0 0 0; padding:0 0 0 18px; color:#222;
+}
+.prof-bullets li{ line-height:1.5; margin: 2px 0; }
+
+/* responsivo: se quiser dividir em duas colunas quando tiver muitas experiências */
+@media (min-width: 900px){
+  .prof-list{ grid-template-columns: 1fr; }
+}

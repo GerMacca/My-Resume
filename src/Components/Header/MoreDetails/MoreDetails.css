@@ -1,0 +1,35 @@
+.more-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    background-color: var(--color-bg);
+    padding: 20px;
+    box-shadow: 0 8px 18px rgba(0,0,0,.08);
+}
+
+.more-details button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: var(--radius-small);
+    border: 1px solid transparent;
+    cursor: pointer;
+    background: var(--color-primary);
+    color: #ffffffde;
+    transition:
+        transform var(--med) var(--ease),
+        background var(--med) var(--ease),
+        border-color var(--med) var(--ease),
+        box-shadow var(--med) var(--ease);
+    box-shadow: var(--shadow-08);
+}
+
+.more-details button:hover {
+    box-shadow: var(--shadow-12);
+    background: var(--color-primary-light);
+}
+
+.more-details button:active {
+    background: var(--color-primary-dark);
+    transform: translateY(2px);
+}

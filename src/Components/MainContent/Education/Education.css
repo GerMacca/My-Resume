@@ -1,0 +1,88 @@
+.education{
+  --text: var(--fg-text, #1b1b1f);
+  --muted: var(--fg-muted, #5c5c70);
+  --accent1: var(--color-primary);
+  --accent2: var(--color-primary-light);
+  --accent3: var(--color-primary-dark);
+  --border: color-mix(in srgb, var(--accent1), transparent 80%);
+  --ok: #2e7d32;
+  --warn: #e53935;
+  --info: #1e88e5;
+  --rad: 14px;
+}
+
+.education-wrap{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: clamp(12px, 3vw, 24px);
+  color: var(--text);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--rad);
+  box-shadow: 0 8px 18px rgba(0,0,0,.08);
+  opacity: 0;
+  animation: fadeInLeft 1s ease-in-out both;
+}
+
+.education-title{
+  margin: 0 0 12px;
+  font-weight: 700;
+  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+  color: var(--accent3);
+  position: relative;
+}
+.education-title::after{
+  content:""; display:block; height:2px; width:76px; margin-top:8px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
+}
+
+.education-subtitle{
+  margin: 18px 0 10px;
+  font-weight: 700;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: var(--accent3);
+  position: relative;
+}
+.education-subtitle::after{
+  content:""; display:block; height:2px; width:64px; margin-top:6px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
+}
+
+.edu-list{
+  list-style:none; margin:0; padding:0;
+  display:grid;
+}
+
+.edu-item{
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin: 10px 0px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.edu-item:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.08);
+  cursor: pointer;
+}
+
+.edu-content{ flex:1; min-width:0; }
+
+.edu-head{ align-items:flex-start; min-width:0; }         /* flex pode encolher */
+.edu-head h3{ flex:1; min-width:0; }                      /* título ocupa o resto */
+.edu-head .badge{ white-space:normal; overflow-wrap:anywhere; max-width:100%; }
+.badge.ok{ color: var(--ok); }
+.badge.warn{ color: var(--warn); }
+.badge.info{ color: var(--info); }
+
+.edu-desc{
+  margin:6px 0 0; color: var(--muted);
+  font-size: clamp(.92rem, 1.8vw, 1rem);
+  line-height:1.5;
+}
+
+/* (opcional) duas colunas se a lista crescer */
+@media (min-width: 900px){
+  .edu-list.grid-2{ grid-template-columns: 1fr 1fr; gap: 12px; }
+}

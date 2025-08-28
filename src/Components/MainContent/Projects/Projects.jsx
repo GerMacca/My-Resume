@@ -15,7 +15,7 @@ const projects = [
             'Seleção de temas',
         ],
         stack: ['React Vite', 'CSS'],
-        links: { github: '#', live: '#' },
+        links: { github: 'https://github.com/GerMacca/My-Resume', live: '#' },
     },
     {
         title: 'Pokédex — TrainerDex',
@@ -28,7 +28,7 @@ const projects = [
             'Cards com animações e carregamento incremental.',
             'Plano: pesquisa por filtro direto na API e tema dark.',
         ],
-        stack: ['React Vite', 'PokéAPI'],
+        stack: ['React Vite', 'CSS', 'PokéAPI'],
         links: { github: '#', live: '#' },
     },
     {

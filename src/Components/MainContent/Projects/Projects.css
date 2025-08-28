@@ -92,11 +92,6 @@
   border: 1px solid color-mix(in srgb, var(--accent1), transparent 70%);
 }
 
-.tag:hover{
-    cursor: pointer;
-    transform: scale(1.05);
-}
-
 .proj-actions{
   display:flex; gap:10px; margin-top:10px;
 }

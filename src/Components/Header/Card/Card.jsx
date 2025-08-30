@@ -171,8 +171,7 @@ function Card({ setOpen }) {
 
     useEffect(() => {
         const scrollY = window.scrollY;
-
-        // guarda estilos originais p/ restaurar depois
+        
         const { overflow, position, top, width } = document.body.style;
 
         document.body.style.overflow = 'hidden';

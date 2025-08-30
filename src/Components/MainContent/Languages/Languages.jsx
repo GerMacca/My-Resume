@@ -18,7 +18,7 @@ const languages = [
     subtitle: 'Compreensão avançada',
     period: '2025',
     badge: 'info',
-    status: 'Ativo',
+    status: 'Língua secundária',
     desc: [
       'Leitura técnica diária (docs, papers).',
       'Conversação.',
@@ -28,7 +28,7 @@ const languages = [
   }
 ];
 
-export default function Languages(){
+export default function Languages() {
   return (
     <section className="box languages">
       <div className="languages-wrap">

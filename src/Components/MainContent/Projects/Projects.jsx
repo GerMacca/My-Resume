@@ -15,7 +15,7 @@ const projects = [
             'Seleção de temas',
         ],
         stack: ['React Vite', 'CSS'],
-        links: { github: 'https://github.com/GerMacca/My-Resume', live: '#' },
+        links: { github: 'https://github.com/GerMacca/My-Resume' },
     },
     {
         title: 'Pokédex — TrainerDex',
@@ -29,7 +29,7 @@ const projects = [
             'Plano: pesquisa por filtro direto na API e tema dark.',
         ],
         stack: ['React Vite', 'CSS', 'PokéAPI'],
-        links: { github: '#', live: '#' },
+        links: { github: '#' },
     },
     {
         title: 'Página de Login',
@@ -43,7 +43,7 @@ const projects = [
             'Animações de transição e hover.',
         ],
         stack: ['HTML', 'CSS', 'JavaScript'],
-        links: { github: '#', live: '#' },
+        links: { github: '#' },
     },
     {
         title: 'Mini-MarketPlace',
@@ -59,7 +59,7 @@ const projects = [
             'Replicação de um Banco de Dados por meio de arquivos'
         ],
         stack: ['Java'],
-        links: { github: '#', live: '#' }
+        links: { github: 'https://github.com/GerMacca/MarketPlaceInTerminalWithJava' }
     }
 ];
 

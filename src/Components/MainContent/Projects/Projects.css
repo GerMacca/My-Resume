@@ -16,7 +16,7 @@
   margin: 0 auto;
   padding: clamp(12px, 3vw, 24px);
   color: var(--text);
-  background: #fff;
+  background: var(--color-bg-modal);
   border: 1px solid var(--border);
   border-radius: var(--rad);
   box-shadow: 0 8px 18px rgba(0,0,0,.08);
@@ -90,11 +90,6 @@
   font-size:.8rem; padding:4px 8px; border-radius:999px;
   background: color-mix(in srgb, var(--accent1), transparent 88%);
   border: 1px solid color-mix(in srgb, var(--accent1), transparent 70%);
-}
-
-.tag:hover{
-    cursor: pointer;
-    transform: scale(1.05);
 }
 
 .proj-actions{

@@ -2,7 +2,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background-color: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary), var(--color-primary-light));
   padding: 150px 100px;
   border-bottom-left-radius: 24px;
   border-bottom-right-radius: 24px;

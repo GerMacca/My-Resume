@@ -8,12 +8,12 @@ const experiences = [
         badge: 'ok', // ok | warn | info
         status: 'Atual',
         bullets: [
-            'Evolução e manutenção de módulos (Financeiro, Estoque, Cadastro, Vendas, Emissão de Notas).',
+            'Evolução e manutenção de áreas chave do ERP (operacional, fiscal e comercial)',
             'Integrações API: SendPulse (e-mail transacional) e Google Calendar (agendamentos).',
-            'Relatórios com FastReport e exportações Excel/CSV.',
+            'Relatórios e exportações Excel/CSV.',
             'Consultas e otimizações em Firebird SQL (índices, validações, NCMs e etc).',
             'Suporte técnico ao cliente',
-            'Conhecimentos básicos em contabilidade e legislação fiscal.',
+            'Conhecimentos em contabilidade e legislação fiscal.',
         ]
     }
 ];

@@ -10,9 +10,9 @@ const projects = [
         badge: 'ok',                 // ok | warn | info
         status: 'Finalizado',
         desc: [
-            'Layout responsivo com grid “masonry” e cards.',
-            'Animações: órbita dos ícones e anel de luz conic-gradient.',
-            'Seleção de temas',
+            'Grid responsivo com cards objetivos.',
+            'Acesso rápido a projetos e perfis.',
+            'Contato facilitado e currículo (PDF) para download.'
         ],
         stack: ['React Vite', 'CSS'],
         links: { github: 'https://github.com/GerMacca/My-Resume' },
@@ -35,39 +35,48 @@ const projects = [
     },
     {
         title: 'TrainerDex',
-        subtitle: 'Suite de telas do mesmo projeto (PokéAPI)',
+        subtitle: 'Telas de um mesmo projeto',
         period: '2025',
         badge: 'warn',
         status: 'MVP',
-        desc: ['Conjunto: Login, Landing e Pokédex.'],
+        desc: ['Páginas de Login, Inicial e Pokédex desenvolvidas no meu primeiro projeto; cada uma usa tecnologias diferentes e está em processo de integração para formar um único site.'],
         children: [
             {
                 title: 'Página de Login',
-                subtitle: 'Front isolado para autenticação',
+                subtitle: 'Apenas FrontEnd por enquanto',
                 period: '2024',
-                badge: 'ok',
-                status: 'Finalizado',
-                desc: ['Validação, animações e tema Pokémon.'],
+                badge: 'warn',
+                status: 'Em progresso',
+                desc: ['Tela de login com UX agradável', 'Autentificação em produção'],
                 stack: ['HTML', 'CSS', 'JavaScript'],
                 links: { github: 'https://github.com/GerMacca/LoginPage-TrainerDex' }
             },
             {
-                title: 'Landing Page',
-                subtitle: 'Home de apresentação',
+                title: 'Página Inicial',
+                subtitle: 'Página de apresentação',
                 period: '2025',
-                badge: 'info',
+                badge: 'warn',
                 status: 'Em progresso',
-                desc: ['Hero, CTA e seções de recursos.'],
+                desc: [
+                    'Apresenta o objetivo do site.',
+                    'Direciona o visitante para o conteúdo principal.',
+                    'Traz introdução com imagem temática e seção sobre o projeto.',
+                    'UX: navegação clara e acessível (inclusive por teclado).'
+                ],
                 stack: ['HTML', 'CSS', 'JavaScript'],
                 links: { github: 'https://github.com/GerMacca/MainContent-TrainerDex' }
             },
             {
                 title: 'Pokédex',
-                subtitle: 'Listagem + filtros (tipo/geração/altura/peso)',
+                subtitle: 'Listagem + filtros',
                 period: '2025',
                 badge: 'warn',
-                status: 'MVP',
-                desc: ['Cards animados e carregamento incremental.'],
+                status: 'Em progresso',
+                desc: [
+                    'Cards animados com informações principais.',
+                    'Carregamento animado.',
+                    'Filtros combináveis.'
+                ],
                 stack: ['React Vite', 'CSS', 'PokéAPI'],
                 links: { github: 'https://github.com/GerMacca/MainContent-TrainerDex' }
             }

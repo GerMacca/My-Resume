@@ -9,6 +9,8 @@ import JavaScript from '../../../assets/JS.png'
 import Reactimg from '../../../assets/React.png'
 import Python from '../../../assets/Python.png'
 import Java from '../../../assets/Java.png'
+import Git from '../../../Assets/Git.png'
+import GitHub from '../../../Assets/GitHub.png'
 import { IoCloseSharp } from "react-icons/io5";
 
 import './Card.css'
@@ -29,12 +31,12 @@ const SKILLS_DATA = [
     [
         {
             name: 'HTML',
-            description: 'Tenho muita familiaridade com HTML. Estruturo páginas com facilidade, sempre buscando semântica e organização clara',
+            description: 'Tenho bastante familiaridade com HTML. Estruturo páginas com facilidade, sempre buscando organização clara',
             image: HTML
         },
         {
             name: 'CSS',
-            description: 'Uso CSS com confiança, aplicando estilos modernos, responsividade e animações leves para criar interfaces agradáveis e funcionais',
+            description: 'Uso CSS diariamente, aplicando estilos modernos, responsividade e animações leves para criar interfaces agradáveis e funcionais',
             image: CSS
         }
     ],
@@ -70,19 +72,19 @@ const SKILLS_DATA = [
         },
         {
             name: 'APIs',
-            description: 'Tenho experiência com consumo de APIs, Usei em alguns projetos pessoais e profissionais',
+            description: 'Tenho experiência com consumo de APIs, fiz uso em projetos pessoais e profissionais',
             image: API
         }
     ],
     [
         {
             name: 'Git',
-            description: 'Controle de versão no dia a dia: branching, commits claros, pull/rebase, conflitos, tags/releases.',
+            description: 'Uso para controle de versão: commits claros, branching e merge seguindo boas práticas.',
             image: Git
         },
         {
             name: 'GitHub',
-            description: 'Colaboração: PRs com review, Issues/Projects, Actions (CI) e Releases (em evolução).',
+            description: 'Uso o GitHub para backup e repositório, pull requests, documentações e portifólio.',
             image: GitHub
         }
     ],
@@ -101,83 +103,91 @@ const SKILLS_DATA = [
 ]
 
 function Card({ setOpen }) {
-    const cardsRef = useRef([])
-    const [activeIndex, setActiveIndex] = useState(0)
+    const cardsRef = useRef([]);
+    const containerRef = useRef(null);
+    const isProgrammatic = useRef(false);
+    const [loadedCount, setLoadedCount] = useState(0);
+    const totalImages = SKILLS_DATA.length * 2;
+    const ready = loadedCount >= totalImages;
+    const [activeIndex, setActiveIndex] = useState(0);
 
     const getAnimationClass = useCallback((skillName) => {
-        const lowerCaseName = skillName.toLowerCase()
-
-        if (ANIMATION_CONFIG.PULSE.includes(lowerCaseName)) return 'pulse'
-        if (ANIMATION_CONFIG.SPIN.includes(lowerCaseName)) return 'spin'
-
-        return ''
-    }, [])
+        const lowerCaseName = skillName.toLowerCase();
+        if (ANIMATION_CONFIG.PULSE.includes(lowerCaseName)) return 'pulse';
+        if (ANIMATION_CONFIG.SPIN.includes(lowerCaseName)) return 'spin';
+        return '';
+    }, []);
 
     const scrollToCard = useCallback((index) => {
-        const targetCard = cardsRef.current[index]
+        const targetCard = cardsRef.current[index];
         if (targetCard) {
+            isProgrammatic.current = true;
             targetCard.scrollIntoView({
                 behavior: SCROLL_BEHAVIOR.SMOOTH,
                 block: SCROLL_BEHAVIOR.CENTER
-            })
+            });
+
+            window.setTimeout(() => {
+                isProgrammatic.current = false;
+            }, 400);
         }
-    }, [])
+    }, []);
 
     const handleCardClick = useCallback((index) => {
         if (activeIndex !== index) {
-            scrollToCard(index)
-            setTimeout(() => {
-                setActiveIndex(index)
-            }, SCROLL_DELAY)
+            setActiveIndex(index);
         }
-    }, [activeIndex, scrollToCard, setActiveIndex])
+    }, [activeIndex]);
 
     const handleClose = useCallback(() => {
-        setOpen(false)
-    }, [setOpen])
+        setOpen(false);
+    }, [setOpen]);
 
     const handleScroll = useCallback(() => {
-        const middleY = window.innerHeight / 2
-        let closestIndex = -1
-        let closestDistance = Infinity
+        if (isProgrammatic.current || !containerRef.current) return;
+
+        const containerRect = containerRef.current.getBoundingClientRect();
+        const middleY = containerRect.top + containerRect.height / 2;
+
+        let closestIndex = -1;
+        let closestDistance = Infinity;
 
         cardsRef.current.forEach((card, index) => {
-            if (!card) return
-
-            const rect = card.getBoundingClientRect()
-            const cardMiddle = rect.top + rect.height / 2
-            const distance = Math.abs(cardMiddle - middleY)
-
+            if (!card) return;
+            const rect = card.getBoundingClientRect();
+            const cardMiddle = rect.top + rect.height / 2;
+            const distance = Math.abs(cardMiddle - middleY);
             if (distance < closestDistance) {
-                closestDistance = distance
-                closestIndex = index
+                closestDistance = distance;
+                closestIndex = index;
             }
-        })
+        });
 
         if (closestIndex !== -1 && closestIndex !== activeIndex) {
-            setActiveIndex(closestIndex)
+            setActiveIndex(closestIndex);
         }
-    }, [activeIndex])
+    }, [activeIndex]);
 
     const handleKeyDown = useCallback((event) => {
-        const { key } = event
+        const { key } = event;
 
-        if (key === 'ArrowDown' && activeIndex < SKILLS_DATA.length - 1) {
-            const newIndex = activeIndex + 1
-            setActiveIndex(newIndex)
-            scrollToCard(newIndex)
-        } else if (key === 'ArrowUp' && activeIndex > 0) {
-            const newIndex = activeIndex - 1
-            setActiveIndex(newIndex)
-            scrollToCard(newIndex)
+        if (key === 'ArrowDown') {
+            event.preventDefault();
+            if (activeIndex < SKILLS_DATA.length - 1) {
+                setActiveIndex((i) => i + 1);
+            }
+        } else if (key === 'ArrowUp') {
+            event.preventDefault();
+            if (activeIndex > 0) {
+                setActiveIndex((i) => i - 1);
+            }
         } else if (key === 'Escape') {
             setOpen(false);
         }
-    }, [activeIndex, scrollToCard])
+    }, [activeIndex, setOpen]);
 
     useEffect(() => {
         const scrollY = window.scrollY;
-
         const { overflow, position, top, width } = document.body.style;
 
         document.body.style.overflow = 'hidden';
@@ -195,36 +205,31 @@ function Card({ setOpen }) {
     }, []);
 
     useEffect(() => {
-        const activeCard = cardsRef.current[activeIndex]
-        if (activeCard) {
-            activeCard.scrollIntoView({
-                behavior: SCROLL_BEHAVIOR.SMOOTH,
-                block: SCROLL_BEHAVIOR.CENTER,
-            })
-        }
-    }, [activeIndex])
+        scrollToCard(activeIndex);
+    }, [activeIndex, scrollToCard]);
 
     useEffect(() => {
-        const container = document.querySelector('.scroll-container')
-        if (!container) return
-
-        container.addEventListener('scroll', handleScroll)
-        handleScroll()
-
-        return () => container.removeEventListener('scroll', handleScroll)
-    }, [handleScroll])
+        const element = containerRef.current;
+        if (!element) return;
+        const onScroll = () => {
+            requestAnimationFrame(handleScroll);
+        };
+        element.addEventListener('scroll', onScroll, { passive: true });
+        handleScroll();
+        return () => element.removeEventListener('scroll', onScroll);
+    }, [handleScroll]);
 
     useEffect(() => {
-        window.addEventListener('keydown', handleKeyDown)
-        return () => window.removeEventListener('keydown', handleKeyDown)
-    }, [handleKeyDown])
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [handleKeyDown]);
 
     const renderCard = useCallback((cardData, index) => (
         <div
             key={index}
             data-index={index}
             className={`Card ${activeIndex === index ? 'active' : ''}`}
-            ref={el => (cardsRef.current[index] = el)}
+            ref={(element) => (cardsRef.current[index] = element)}
             onClick={() => handleCardClick(index)}
         >
             <div className="total-size">
@@ -235,6 +240,9 @@ function Card({ setOpen }) {
                         alt={cardData[0].name}
                         className={getAnimationClass(cardData[0].name)}
                         draggable="false"
+                        loading="eager"
+                        onLoad={() => setLoadedCount(c => c + 1)}
+                        onError={() => setLoadedCount(c => c + 1)}
                     />
                     <p>{cardData[0].description}</p>
                 </div>
@@ -245,25 +253,28 @@ function Card({ setOpen }) {
                         alt={cardData[1].name}
                         className={getAnimationClass(cardData[1].name)}
                         draggable="false"
+                        loading="eager"
+                        onLoad={() => setLoadedCount(c => c + 1)}
+                        onError={() => setLoadedCount(c => c + 1)}
                     />
                     <p>{cardData[1].description}</p>
                 </div>
             </div>
         </div>
-    ), [activeIndex, handleCardClick, getAnimationClass])
+    ), [activeIndex, handleCardClick, getAnimationClass]);
 
     return (
-        <div className='modal-overlay'>
-            <div className='scroll-container'>
+        <div className="modal-overlay">
+            <div className="scroll-container" ref={containerRef}>
                 <button onClick={handleClose} className="close-btn outline" aria-label="Fechar modal">
-                    <IoCloseSharp size={36} color='white' />
+                    <IoCloseSharp size={36} color="white" />
                 </button>
-                <div className='Cards'>
+                <div className={`Cards ${ready ? 'is-ready' : ''}`}>
                     {SKILLS_DATA.map((cardData, index) => renderCard(cardData, index))}
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default Card
+export default Card;

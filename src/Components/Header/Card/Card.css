@@ -28,7 +28,6 @@
 }
 .scroll-container::-webkit-scrollbar{ display:none; }
 
-
 .Cards{
   display: flex;
   flex-direction: column;
@@ -38,8 +37,18 @@
   padding-top: 1px;              
   background: transparent !important;
   box-shadow: none !important;
+  opacity: 0; 
+  visibility: hidden; 
+  pointer-events: none;
+  transition: opacity .25s ease;
 }
 .Cards > .Card:first-child{ margin-top: 0; }
+
+.Cards.is-ready{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
 
 .Card{
   transition: transform .8s ease, filter .8s ease;

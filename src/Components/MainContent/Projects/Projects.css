@@ -52,8 +52,8 @@
 .proj-group{position:relative;}
 .proj-sublist{margin:12px 0 0 12px; padding-left:16px;}
 .proj-subitem{margin-bottom:20px;}
-.proj-subitem h4{ font-size:1rem; }
-.proj-subitem .proj-desc{margin-top:6px;}
+.proj-subitem h4{ font-size: clamp(1.05rem, 1.8vw, 1.2rem); }
+.proj-subitem .proj-desc{margin-top:6px; }
 
 .proj-cover{
   flex: 0 0 96px;

@@ -15,13 +15,13 @@ const languages = [
   },
   {
     title: 'Inglês - 🇬🇧',
-    subtitle: 'Compreensão avançada',
-    period: '2025',
+    subtitle: 'Compreensão intermediária-avançada',
+    period: '—',
     badge: 'info',
     status: 'Língua secundária',
     desc: [
-      'Leitura técnica diária (docs, papers).',
-      'Conversação.',
+      'Leitura técnica diária (docs)',
+      'Conversação',
       'Escrita',
     ],
     stack: ['B2', 'Intermediário-Avançado'],

@@ -7,7 +7,7 @@ export default function MoreDetails() {
     const [downloading, setDownloading] = useState(false);
 
     const handleDownload = () => {
-        if (downloading) return; //anti spam
+        if (downloading) return;
         setDownloading(true);
         const a = document.createElement('a');
         a.href = '/curriculo-germano.pdf';

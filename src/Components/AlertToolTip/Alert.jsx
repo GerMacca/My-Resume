@@ -15,7 +15,7 @@ function ClipboardTooltip({ x, y, onDone }) {
     return (
         <div
             style={{
-                position: 'fixed',
+                position: 'absolute',
                 top: y - 30,
                 left: x,
                 transform: 'translateX(-50%)',

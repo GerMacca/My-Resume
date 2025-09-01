@@ -13,7 +13,6 @@ import { IoCloseSharp } from "react-icons/io5";
 
 import './Card.css'
 
-// Constantes
 const ANIMATION_CONFIG = {
     PULSE: ['python', 'apis', 'css', 'javascript', 'html', 'mysql', 'java', 'delphi', 'firebird'],
     SPIN: ['react']
@@ -24,27 +23,9 @@ const SCROLL_BEHAVIOR = {
     CENTER: 'center'
 }
 
-const KEYBOARD_KEYS = {
-    ARROW_DOWN: 'ArrowDown',
-    ARROW_UP: 'ArrowUp'
-}
-
 const SCROLL_DELAY = 200
 
-// Skills
 const SKILLS_DATA = [
-    [
-        {
-            name: 'Delphi',
-            description: 'Aprendi Delphi no meu primeiro estágio, foi com ele que comecei a programar de verdade e entender lógica de desenvolvimento',
-            image: Delphi
-        },
-        {
-            name: 'Firebird',
-            description: 'Foi meu primeiro contato com bancos de dados, aprendi a configurá-lo e a trabalhar com consultas, modelagem e manutenção',
-            image: Firebird
-        }
-    ],
     [
         {
             name: 'HTML',
@@ -92,13 +73,36 @@ const SKILLS_DATA = [
             description: 'Tenho experiência com consumo de APIs, Usei em alguns projetos pessoais e profissionais',
             image: API
         }
+    ],
+    [
+        {
+            name: 'Git',
+            description: 'Controle de versão no dia a dia: branching, commits claros, pull/rebase, conflitos, tags/releases.',
+            image: Git
+        },
+        {
+            name: 'GitHub',
+            description: 'Colaboração: PRs com review, Issues/Projects, Actions (CI) e Releases (em evolução).',
+            image: GitHub
+        }
+    ],
+    [
+        {
+            name: 'Delphi',
+            description: 'Aprendi Delphi no meu primeiro estágio, foi com ele que comecei a programar de verdade e entender lógica de desenvolvimento',
+            image: Delphi
+        },
+        {
+            name: 'Firebird',
+            description: 'Foi meu primeiro contato com bancos de dados, aprendi a configurá-lo e a trabalhar com consultas, modelagem e manutenção',
+            image: Firebird
+        }
     ]
 ]
 
 function Card({ setOpen }) {
     const cardsRef = useRef([])
     const [activeIndex, setActiveIndex] = useState(0)
-    const [ready, setReady] = useState(false);
 
     const getAnimationClass = useCallback((skillName) => {
         const lowerCaseName = skillName.toLowerCase()
@@ -158,20 +162,22 @@ function Card({ setOpen }) {
     const handleKeyDown = useCallback((event) => {
         const { key } = event
 
-        if (key === KEYBOARD_KEYS.ARROW_DOWN && activeIndex < SKILLS_DATA.length - 1) {
+        if (key === 'ArrowDown' && activeIndex < SKILLS_DATA.length - 1) {
             const newIndex = activeIndex + 1
             setActiveIndex(newIndex)
             scrollToCard(newIndex)
-        } else if (key === KEYBOARD_KEYS.ARROW_UP && activeIndex > 0) {
+        } else if (key === 'ArrowUp' && activeIndex > 0) {
             const newIndex = activeIndex - 1
             setActiveIndex(newIndex)
             scrollToCard(newIndex)
+        } else if (key === 'Escape') {
+            setOpen(false);
         }
     }, [activeIndex, scrollToCard])
 
     useEffect(() => {
         const scrollY = window.scrollY;
-        
+
         const { overflow, position, top, width } = document.body.style;
 
         document.body.style.overflow = 'hidden';

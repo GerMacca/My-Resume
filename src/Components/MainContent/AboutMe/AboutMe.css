@@ -1,8 +1,10 @@
+
+
 .about-me{
     display: flex;
     flex-direction: column;
     padding: 30px;
-    border: solid var(--color-border) 2px;
+    border: solid var(--color-primary) 1px;
     border-radius: 16px;
     background: var(--color-bg-modal);
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);

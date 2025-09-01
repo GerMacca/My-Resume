@@ -12,7 +12,7 @@ const graduations = [
         badge: 'warn',
         status: 'Em andamento, previsão de conclusão em 2029',
         period: 'Início em 2024',
-        desc: 'Bacharelado em Ciência da Computação — atualmente no 4º semestre.'
+        desc: 'Bacharelado em Ciência da Computação, atualmente no 4º semestre'
     }
 ];
 

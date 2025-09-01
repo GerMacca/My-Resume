@@ -13,9 +13,6 @@ export default function App() {
     <>
       <Header />
       <MainContent />
-      <button className="theme-toggle" onClick={toggleTheme}>
-        🌓
-      </button>
     </>
   );
 }

@@ -17,6 +17,7 @@
   cursor: pointer;
   text-align: left;
   max-width: 525px;
+  min-height: 60px;
 }
 
 .icon:hover{
@@ -33,3 +34,12 @@
 .contacts > *:nth-child(2) { animation-delay: 0.3s; }
 .contacts > *:nth-child(3) { animation-delay: 0.4s; }
 .contacts > *:nth-child(4) { animation-delay: 0.5s; }
+
+@media (max-width: 1000px) {
+  .contacts{
+    align-items: center;
+  }
+  .ctt-item{
+    min-width: 505px;
+  }
+}

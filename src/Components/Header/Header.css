@@ -3,9 +3,9 @@ header {
   flex-direction: row;
   justify-content: space-around;
   background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary), var(--color-primary-light));
-  padding: 150px 100px;
   border-bottom-left-radius: 24px;
   border-bottom-right-radius: 24px;
+  padding: 20px 50px 50px 50px;
 }
 
 header h1 {
@@ -19,12 +19,15 @@ header h2 {
 .identification-infos{
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 40px;
 }
 
 .name-func{
   display: flex;
   flex-direction: column;
+  align-items: start;
+  justify-content: start;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   gap: 10px;
   animation: fadeInLeft 0.3s ease-in-out;

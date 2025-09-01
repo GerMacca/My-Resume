@@ -20,7 +20,6 @@
   h3{font-size:var(--h3-size); line-height:var(--lh-small);margin: 0; }
   p{font-size:var(--p-size); line-height:var(--lh-med); font-weight: 500; margin: 0; }
 
-  /* Texts */
   --font-sans: Montserrat, Poppins, Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --h1-size: clamp(2rem, 1.2rem + 2vw, 3rem);
@@ -29,9 +28,8 @@
   --p-size: 1.15rem;
   --lh-small: 1.0;
   --lh-med: 1.25;
-  --lh-large: 1.5;
+  --lh-large: 1.5;  
 
-  /* spaces */
   --space-xxs: 0.25rem;
   --space-xs: 0.5rem;
   --space-s: 0.75rem;
@@ -40,35 +38,30 @@
   --space-xl: 2rem;
   --space-xxl: 3rem;
 
-  /* radius */
   --radius-small: 8px;
   --radius-med: 12px;
   --radius-large: 20px;
   --radius-full: 999px;
 
-  /* border & shadow */
-  --border: 1px solid var(--color-border);
+  --border: 1px solid color-mix(in srgb, var(--color-primary), transparent 80%);
   --shadow-08: 0 2px 8px rgba(0,0,0,0.08);
   --shadow-12: 0 8px 24px rgba(0,0,0,0.12);
 
-  /* Animations */
   --ease: cubic-bezier(0.2,0.8,0.2,1);
   --fast: 120ms;
   --med: 200ms;
   --slow: 360ms;
 
-  /* Layout */
   --container: 1200px;
   --zindex-nav: 50; 
   --zindex-modal: 100; 
   --zindex-alert: 110;
 
-  /* theme default */
   --color-bg: #f5f5f5;
   --color-bg-modal: #ffffff;
   --color-text: #1a1a1a;
   --color-muted: #6b6b6b;
-  --color-border: #dcdcdc;
+  --color-border: #adadad;
   --color-contrast: #ffffff;
 
   --color-primary: #2c0546;
@@ -77,35 +70,12 @@
   --color-secondary: #FFD966;   
   --color-secondary-light: #FFE583;
   --color-secondary-dark: #C9A500; 
-  /* states */
+
   --color-success: #2e7d32;
   --color-warning: #f59241;
   --color-error: #d32f2f;
 }
 
-.dark {
-  --color-bg: #202022;
-  --color-bg-modal: #141416;
-  --color-text: #e6e6e6;
-  --color-muted: #8a8f98;
-  --color-border: #000000;
-  --color-contrast: #ffffff;
-
-  --color-primary: #e70752;
-  --color-primary-light: #eb2e6d;
-  --color-primary-dark: #ac073e;
-
-  --color-secondary: #ffb347;
-  --color-secondary-light: #ffc87d;
-  --color-secondary-dark: #cc7a00;
-
-  --color-success: #3ccf91;
-  --color-warning: #ffb020;
-  --color-error: #ff5f5f;
-
-}
-
-/* BODY */
 html,body,#root{height:100%}
 body{
   margin:0;
@@ -176,7 +146,6 @@ button.outline:hover{
 }
 button.outline:active{ transform:translateY(2px) }
 
-/* 4) DANGER (destructive action) */
 button.danger{
   background:var(--color-error);
   color:#fff;
@@ -190,7 +159,6 @@ button.danger:active{
   transform:translateY(2px);
 }
 
-/* SUCCESS (contructive action) */
 button.success {
   background: var(--color-success);
   color: #fff;
@@ -204,7 +172,6 @@ button.success:active {
   transform: translateY(2px);
 }
 
-/* WARNING */
 button.warning {
   background: var(--color-warning);
   color: #fff;
@@ -218,21 +185,19 @@ button.warning:active {
   transform: translateY(2px);
 }
 
-/* LINKS */
 .link {
   font-weight: 600;
   color: var(--color-primary);
   text-decoration: none;
-  position: relative; /* pra pseudo-elemento */
+  position: relative; 
   transition: color var(--med) var(--ease);
 }
 
-/* linha animada no hover */
 .link::after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -4px; /* distância da linha pro texto */
+  bottom: -4px; 
   width: 100%;
   height: 2px;
   background-color: currentColor;
@@ -250,7 +215,6 @@ button.warning:active {
   transform-origin: left;
 }
 
-/* foco acessível */
 .link:focus-visible {
   outline: none;
   box-shadow:

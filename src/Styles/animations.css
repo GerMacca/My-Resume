@@ -191,14 +191,7 @@
   100% { background-position: 200% 0; }
 }
 
-@keyframes orbit {
-  from {
-    transform: rotate(0deg) translateX(300px) rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg) translateX(300px) rotate(-360deg);
-  }
-}
+/* orbit animation is in SocialOrbit.css */
 
 @keyframes lightPulse {
   0%, 100% { box-shadow: 0 0 20px #a536ff; }

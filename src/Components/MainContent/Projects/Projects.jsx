@@ -18,34 +18,6 @@ const projects = [
         links: { github: 'https://github.com/GerMacca/My-Resume' },
     },
     {
-        title: 'Pokédex — TrainerDex',
-        subtitle: 'Integração com PokéAPI',
-        period: '2025',
-        badge: 'warn',
-        status: 'MVP',
-        desc: [
-            'Filtros combinados (tipo, geração, altura, peso).',
-            'Cards com animações e carregamento incremental.',
-            'Plano: pesquisa por filtro direto na API e tema dark.',
-        ],
-        stack: ['React Vite', 'CSS', 'PokéAPI'],
-        links: { github: '#' },
-    },
-    {
-        title: 'Página de Login',
-        subtitle: 'Login funcional com tema Pokémon, para complementar ao projeto da Pokédex. Apenas FrontEnd',
-        period: '2024',
-        badge: 'ok',
-        status: 'Finalizado',
-        desc: [
-            'Página de login com tema Pokémon.',
-            'Validação de formulário com feedback.',
-            'Animações de transição e hover.',
-        ],
-        stack: ['HTML', 'CSS', 'JavaScript'],
-        links: { github: '#' },
-    },
-    {
         title: 'Mini-MarketPlace',
         subtitle: "Projeto feito em ambiete universitário",
         period: '02/2025',
@@ -60,7 +32,47 @@ const projects = [
         ],
         stack: ['Java'],
         links: { github: 'https://github.com/GerMacca/MarketPlaceInTerminalWithJava' }
-    }
+    },
+    {
+        title: 'TrainerDex',
+        subtitle: 'Suite de telas do mesmo projeto (PokéAPI)',
+        period: '2025',
+        badge: 'warn',
+        status: 'MVP',
+        desc: ['Conjunto: Login, Landing e Pokédex.'],
+        children: [
+            {
+                title: 'Página de Login',
+                subtitle: 'Front isolado para autenticação',
+                period: '2024',
+                badge: 'ok',
+                status: 'Finalizado',
+                desc: ['Validação, animações e tema Pokémon.'],
+                stack: ['HTML', 'CSS', 'JavaScript'],
+                links: { github: 'https://github.com/GerMacca/LoginPage-TrainerDex' }
+            },
+            {
+                title: 'Landing Page',
+                subtitle: 'Home de apresentação',
+                period: '2025',
+                badge: 'info',
+                status: 'Em progresso',
+                desc: ['Hero, CTA e seções de recursos.'],
+                stack: ['HTML', 'CSS', 'JavaScript'],
+                links: { github: 'https://github.com/GerMacca/MainContent-TrainerDex' }
+            },
+            {
+                title: 'Pokédex',
+                subtitle: 'Listagem + filtros (tipo/geração/altura/peso)',
+                period: '2025',
+                badge: 'warn',
+                status: 'MVP',
+                desc: ['Cards animados e carregamento incremental.'],
+                stack: ['React Vite', 'CSS', 'PokéAPI'],
+                links: { github: 'https://github.com/GerMacca/MainContent-TrainerDex' }
+            }
+        ]
+    },
 ];
 
 export default function Projects() {
@@ -71,47 +83,72 @@ export default function Projects() {
 
                 <ul className="proj-list">
                     {projects.map((p, i) => (
-                        <li className="proj-item" key={i}>
-                            {p.cover && (
-                                <div className="proj-cover">
-                                    <img src={p.cover} alt={p.title} loading="lazy" />
-                                </div>
-                            )}
-
+                        <li className={`proj-item ${p.children ? 'proj-group' : ''}`} key={i}>
                             <div className="proj-content">
                                 <div className="proj-head">
                                     <h3>{p.title}</h3>
-                                    <span className={`badge ${p.badge}`}>
-                                        {p.status} • ({p.period})
-                                    </span>
+                                    <span className={`badge ${p.badge}`}>{p.status} • ({p.period})</span>
                                 </div>
 
-                                <p className="proj-sub">{p.subtitle}</p>
-
-                                <ul className="proj-desc">
-                                    {p.desc.map((d, j) => <li key={j}>{d}</li>)}
-                                </ul>
+                                {p.subtitle && <p className="proj-sub">{p.subtitle}</p>}
+                                {p.desc?.length > 0 && (
+                                    <ul className="proj-desc">{p.desc.map((d, j) => <li key={j}>{d}</li>)}</ul>
+                                )}
 
                                 <div className="proj-tags">
-                                    {p.stack.map((t, j) => <span className="tag" key={j}>{t}</span>)}
+                                    {p.stack?.map((t, j) => <span className="tag" key={j}>{t}</span>)}
                                 </div>
 
                                 <div className="proj-actions">
-                                    {p.links.github && (
+                                    {p.links?.github && (
                                         <a href={p.links.github} target="_blank" rel="noopener" aria-label="GitHub">
                                             <TbBrandGithubFilled size={20} />
                                         </a>
                                     )}
-                                    {p.links.live && (
+                                    {p.links?.live && (
                                         <a href={p.links.live} target="_blank" rel="noopener" aria-label="Live demo">
                                             <RiExternalLinkLine size={20} />
                                         </a>
                                     )}
                                 </div>
                             </div>
+
+                            {/* Subitens */}
+                            {p.children && (
+                                <ul className="proj-sublist">
+                                    {p.children.map((c, k) => (
+                                        <li className="proj-subitem" key={k}>
+                                            <div className="proj-head">
+                                                <h4>{c.title}</h4>
+                                                <span className={`badge ${c.badge}`}>{c.status} • ({c.period})</span>
+                                            </div>
+                                            {c.subtitle && <p className="proj-sub">{c.subtitle}</p>}
+                                            {c.desc?.length > 0 && (
+                                                <ul className="proj-desc">{c.desc.map((d, j) => <li key={j}>{d}</li>)}</ul>
+                                            )}
+                                            <div className="proj-tags">
+                                                {c.stack?.map((t, j) => <span className="tag" key={j}>{t}</span>)}
+                                            </div>
+                                            <div className="proj-actions">
+                                                {c.links?.github && (
+                                                    <a href={c.links.github} target="_blank" rel="noopener" aria-label="GitHub">
+                                                        <TbBrandGithubFilled size={20} />
+                                                    </a>
+                                                )}
+                                                {c.links?.live && (
+                                                    <a href={c.links.live} target="_blank" rel="noopener" aria-label="Live demo">
+                                                        <RiExternalLinkLine size={20} />
+                                                    </a>
+                                                )}
+                                            </div>
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
                         </li>
                     ))}
                 </ul>
+
             </div>
         </section>
     );

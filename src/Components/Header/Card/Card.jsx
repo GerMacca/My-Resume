@@ -9,8 +9,8 @@ import JavaScript from '../../../Assets/JS.png'
 import Reactimg from '../../../Assets/React.png'
 import Python from '../../../Assets/Python.png'
 import Java from '../../../Assets/Java.png'
-import Git from '../../../Assets/Git.png'
-import GitHub from '../../../Assets/GitHub.png'
+import Git from '../../../Assets/git.png'
+import GitHub from '../../../Assets/gitHub.png'
 import { IoCloseSharp } from "react-icons/io5";
 
 import './Card.css'

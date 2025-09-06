@@ -1,16 +1,9 @@
-//CSS
 import './ProfileInfos.css'
-
-//Icons & Images
 import { FaPhoneVolume } from "react-icons/fa6";
 import { MdMailOutline } from "react-icons/md";
 import { FaLink } from "react-icons/fa6";
 import { FaMapMarkerAlt } from "react-icons/fa";
-
-//Components
 import Alert from '../../AlertToolTip/Alert.jsx';
-
-//React
 import { useState } from 'react';
 
 export default function ProfileInfos() {

@@ -10,7 +10,7 @@ import Reactimg from '../../../Assets/React.png'
 import Python from '../../../Assets/Python.png'
 import Java from '../../../Assets/Java.png'
 import Git from '../../../Assets/git.png'
-import GitHub from '../../../Assets/gitHub.png'
+import GitHub from '../../../Assets/github.png'
 import { IoCloseSharp } from "react-icons/io5";
 
 import './Card.css'
@@ -24,8 +24,6 @@ const SCROLL_BEHAVIOR = {
     SMOOTH: 'smooth',
     CENTER: 'center'
 }
-
-const SCROLL_DELAY = 200
 
 const SKILLS_DATA = [
     [

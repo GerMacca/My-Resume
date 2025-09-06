@@ -1,9 +1,4 @@
-//CSS
 import './Header.css'
-import '../../Styles/animations.css';
-import { useState } from 'react';
-
-//Components
 import SocialOrbit from './SocialOrbit/SocialOrbit.jsx';
 import ProfileInfos from './ProfileInfos/ProfileInfos.jsx';
 import MoreDetails from './MoreDetails/MoreDetails.jsx';

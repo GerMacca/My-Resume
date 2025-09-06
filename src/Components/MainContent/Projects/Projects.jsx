@@ -12,7 +12,7 @@ const projects = [
         desc: [
             'Grid responsivo com cards objetivos.',
             'Acesso rápido a projetos e perfis.',
-            'Contato facilitado e currículo (PDF) para download.'
+            'Contato facilitado e currículo (PDF) para download/impressão.'
         ],
         stack: ['React Vite', 'CSS'],
         links: { github: 'https://github.com/GerMacca/My-Resume' },

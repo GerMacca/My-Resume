@@ -7,7 +7,7 @@ import Languages from './Languages/Languages.jsx'
 
 export default function MainContent() {
     return (
-        <main>
+        <main className='grid-model'>
             <AboutMe />
             <Education />
             <Professional />

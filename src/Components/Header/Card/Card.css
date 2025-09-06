@@ -18,14 +18,15 @@
 }
 
 .scroll-container{
-  max-height: 90vh;
+  max-height: 100vh;
   overflow: auto;
-  padding: 20px;
+  padding: 175px 20px;
   overscroll-behavior: contain;
   scrollbar-width: none;        
   -ms-overflow-style: none;      
   z-index: 11000;
 }
+
 .scroll-container::-webkit-scrollbar{ display:none; }
 
 .Cards{

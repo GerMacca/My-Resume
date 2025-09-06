@@ -27,7 +27,7 @@
 
 .contacts > * {
   animation: fadeInLeft var(--med) var(--ease) forwards;
-  opacity: 0; /* inicia invisível */
+  opacity: 0;
 }
 
 .contacts > *:nth-child(1) { animation-delay: 0.2s; }
@@ -38,6 +38,7 @@
 @media (max-width: 1000px) {
   .contacts{
     align-items: center;
+    transform: scale(1.2);
   }
   .ctt-item{
     min-width: 505px;

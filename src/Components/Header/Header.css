@@ -45,9 +45,8 @@ header h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 50px 0px 125px 0px;
-    gap: 80px;
-  }
+    padding: 50px 0px 50px 0px;
+  } 
   .profile-infos, .name-func {
     display: flex;
     align-items: center;

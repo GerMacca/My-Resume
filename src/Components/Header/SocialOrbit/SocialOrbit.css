@@ -102,14 +102,6 @@
   }
 }
 
-@media(max-width:1285px){
-  :root{
-    --me-size: 280px;    
-    --orbit-radius: 215px;
-    --orbit-size: 64px;    
-  }
-}
-
 @media(max-width:725px){
   .identification-infos{
     transform: scale(.9);

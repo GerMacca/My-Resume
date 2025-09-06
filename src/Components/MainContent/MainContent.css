@@ -1,7 +1,7 @@
 html{ font-size: clamp(14px, 0.9vw + 8px, 18px); }  
 
 main{
-  max-width: 2000px;      
+  max-width: 1850px;      
   margin-inline: auto;
   padding: clamp(24px, 5vw, 80px);
   column-gap: clamp(20px, 3vw, 40px);

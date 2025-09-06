@@ -146,6 +146,9 @@ img{ user-select: none; }
   .half h3{ font-size: 28px; }
   .half p{ font-size: 16px; }
   img{ width: 180px; }
+  .scroll-container{
+    max-height: 80vh;
+  }
 }
 
 .pulse{ animation: pulse 2.5s ease-in-out infinite; }

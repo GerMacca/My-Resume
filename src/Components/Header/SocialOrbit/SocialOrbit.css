@@ -113,7 +113,21 @@
   .orbit-item, .social-orbit::before, .social-orbit::after{ animation: none !important; }
 }
 
+@media (max-width: 600px){
+  .orbit-container{
+    --orbit-pad: 0;         
+    padding: 60px;  
+  }
+  .social-orbit{
+    width:  var(--me-size);
+    height: var(--me-size);
+  }
+  .social-orbit::after{ --glow: 10px; inset: -4px; }
+}
+
+
 @keyframes orbit{
   from{ transform: rotate(0deg) translateX(var(--orbit-radius)) rotate(0deg); }
   to  { transform: rotate(360deg) translateX(var(--orbit-radius)) rotate(-360deg); }
 }
+

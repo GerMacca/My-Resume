@@ -39,7 +39,7 @@ const projects = [
         period: '2025',
         badge: 'warn',
         status: 'MVP',
-        desc: ['Páginas de Login, Inicial e Pokédex desenvolvidas no meu primeiro projeto; cada uma usa tecnologias diferentes e está em processo de integração para formar um único site.'],
+        desc: ['Páginas de Login, Inicial e Pokédex desenvolvidas no meu primeiro projeto, cada estão desenvolvidas em tecnologias diferentes, está em processo de integração para formar um único site.'],
         children: [
             {
                 title: 'Página de Login',

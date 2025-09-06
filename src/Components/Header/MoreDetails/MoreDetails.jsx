@@ -15,11 +15,11 @@ export default function MoreDetails() {
         document.body.appendChild(a);
         a.click();
         a.remove();
-        setTimeout(() => setDownloading(false), 500);
+        setTimeout(() => setDownloading(false), 1000);
     };
 
     const openDetails = () => {
-        setTimeout(() => setIsCardOpen(true), 0);
+        setIsCardOpen(true)
     }
 
     return (

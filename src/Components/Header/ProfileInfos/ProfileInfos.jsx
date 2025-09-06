@@ -21,9 +21,9 @@ export default function ProfileInfos() {
                     <p>germaccagnan@gmail.com</p>
                 </button>
 
-                <button className='ctt-item' onClick={(e) => handleCopy(e, 'Url')}>
+                <button className='ctt-item' onClick={(e) => handleCopy(e, 'https://germano-resume.vercel.app')}>
                     <FaLink size={38} className='icon' />
-                    <p>url</p>
+                    <p>https://germano-resume.vercel.app/</p>
                 </button>
 
                 <button className='ctt-item' onClick={(e) => handleCopy(e, '+55 54 991630400')}>

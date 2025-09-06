@@ -58,10 +58,10 @@ const projects = [
                 badge: 'warn',
                 status: 'Em progresso',
                 desc: [
-                    'Apresenta o objetivo do site.',
-                    'Direciona o visitante para o conteúdo principal.',
-                    'Traz introdução com imagem temática e seção sobre o projeto.',
-                    'UX: navegação clara e acessível (inclusive por teclado).'
+                    'Apresenta o objetivo do site',
+                    'Direciona o visitante para o conteúdo principal',
+                    'Traz introdução com imagem temática e seção sobre o projeto',
+                    'UX: navegação clara e acessível (inclusive por teclado)'
                 ],
                 stack: ['HTML', 'CSS', 'JavaScript'],
                 links: { github: 'https://github.com/GerMacca/MainContent-TrainerDex' }
@@ -73,9 +73,9 @@ const projects = [
                 badge: 'warn',
                 status: 'Em progresso',
                 desc: [
-                    'Cards animados com informações principais.',
-                    'Carregamento animado.',
-                    'Filtros combináveis.'
+                    'Cards animados com informações principais',
+                    'Carregamento animado',
+                    'Filtros combináveis'
                 ],
                 stack: ['React Vite', 'CSS', 'PokéAPI'],
                 links: { github: 'https://github.com/GerMacca/MainContent-TrainerDex' }

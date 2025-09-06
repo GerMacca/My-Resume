@@ -8,8 +8,8 @@ const languages = [
     badge: 'ok',                // ok | warn | info
     status: 'Principal',
     desc: [
-      'Leitura, escrita e conversação.',
-      'Vocabulário técnico (TI / ERP).',
+      'Leitura, escrita e conversação',
+      'Vocabulário técnico (TI / ERP)',
     ],
     stack: ['Nativo'],
   },

@@ -13,7 +13,7 @@ const experiences = [
             'Relatórios e exportações Excel/CSV.',
             'Consultas e otimizações em Firebird SQL (índices, validações, NCMs e etc).',
             'Suporte técnico ao cliente',
-            'Conhecimentos em contabilidade e legislação fiscal.',
+            'Conhecimentos em contabilidade e legislação fiscal',
         ]
     }
 ];
